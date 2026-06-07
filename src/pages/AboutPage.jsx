@@ -1,36 +1,49 @@
 import { useEffect, useRef } from 'react'
 
-const timeline = [
-  { year: '2021', title: 'Foundation', desc: 'Cyber Security Society established at UET Lahore with 15 founding members.' },
-  { year: '2022', title: 'First CTF', desc: 'Organized the first inter-university Capture The Flag competition with 200+ participants.' },
-  { year: '2023', title: 'Workshop Series', desc: 'Launched monthly workshops on ethical hacking, cryptography, and network security.' },
-  { year: '2024', title: 'National Recognition', desc: 'Won Best Cyber Society award at national cybersecurity summit.' },
-  { year: '2025', title: 'Industry Partnerships', desc: 'Collaborated with leading infosec firms for internship and training programs.' },
-]
-
-const coreValues = [
-  { icon: 'fa-shield-halved', title: 'Integrity', desc: 'Upholding the highest ethical standards in cybersecurity practices and research.' },
-  { icon: 'fa-eye', title: 'Vigilance', desc: 'Staying ahead of emerging threats through continuous learning and awareness.' },
-  { icon: 'fa-lightbulb', title: 'Innovation', desc: 'Fostering creative solutions to complex security challenges.' },
+const boardOfGovernors = [
+  { year: '2022', name: 'Muhammad Adeel Shafique' },
+  { year: '2022', name: 'Shahzaib Mazhar Janjua' },
+  { year: '2024', name: 'Shifa Qaiser' },
+  { year: '2024', name: 'Muhammad Abdullah Sanghera' },
+  { year: '2024', name: 'Savera Zainab' },
+  { year: '2024', name: 'Emaan Fatima' },
 ]
 
 const coreBody = [
-  { name: 'Dr. Usman Ahmad', role: 'Patron / Faculty Advisor', bio: 'Guiding the society with academic leadership and cybersecurity research expertise.' },
-  { name: 'Saad Ali Khan', role: 'President', bio: 'Leading the society vision, strategy, and overall operations for the academic year.' },
-  { name: 'Fatima Zafar', role: 'Vice President', bio: 'Coordinating internal affairs, deputy leadership, and member engagement initiatives.' },
+  { name: 'Abdul Ahad', role: 'President', bio: 'Steering the society with strategic leadership and operational oversight.' },
+  { name: 'SyedaTehreem Fatima', role: 'Vice President', bio: 'Managing internal coordination and supporting executive decisions.' },
+  { name: 'Muhammad Afaq Ahmad', role: 'Chief Coordinator', bio: 'Orchestrating cross-team collaboration and society-wide initiatives.' },
+  { name: 'Zain-ul-Abidin', role: 'Director General', bio: 'Overseeing strategic planning and organizational development.' },
+  { name: 'Raheel Mujahid', role: 'General Secretary', bio: 'Managing administrative operations and official communications.' },
+  { name: 'Misma Shahzad', role: 'Vice General Secretary', bio: 'Assisting secretarial functions and maintaining institutional records.' },
+  { name: 'Adil Mehmood', role: 'Treasurer', bio: 'Handling financial planning, budgeting, and resource allocation.' },
 ]
 
 const techTeam = [
-  { name: 'Hammad Raza', role: 'Technical Lead', bio: 'Overseeing workshops, CTF challenges, and the technical roadmap of the society.' },
-  { name: 'Abdullah Naeem', role: 'Cyber Security Analyst', bio: 'Leading vulnerability research, security assessments, and lab setup for training sessions.' },
-  { name: 'Mahnoor Sheikh', role: 'CTF & Labs Lead', bio: 'Designing and managing CTF challenges, hands-on labs, and technical write-ups.' },
+  { name: 'Hafiz Muhammad Abdullah', role: 'Technical Lead', bio: 'Driving technical projects and mentoring members in cybersecurity skills.' },
+  { name: 'Faizan Amjad', role: 'Technical Lead', bio: 'Leading technical workshops and guiding hands-on security training.' },
+  { name: 'Hamza Manzhar', role: 'IOT Lead', bio: 'Spearheading IoT security research and embedded systems workshops.' },
+  { name: 'Maheen Zaheer', role: 'Design Lead', bio: 'Crafting visual identity, UI/UX assets, and creative brand materials.' },
+  { name: 'Khizra Rafique', role: 'Programming Lead', bio: 'Designing coding challenges and overseeing programming curricula.' },
+  { name: 'Noor un Nahar', role: 'Programming Lead', bio: 'Developing programming workshops and technical learning resources.' },
+  { name: 'Taha Khalid', role: 'Web Development Lead', bio: 'Architecting and maintaining the society digital presence and web platforms.' },
+  { name: 'Abdullah Haider', role: 'Ethical Defence', bio: 'Leading defensive cybersecurity strategies and blue-team operations.' },
+  { name: 'Umair Majeed', role: 'Ethical Offence Lead', bio: 'Directing offensive security testing and red-team exercises.' },
 ]
 
 const nonTechTeam = [
-  { name: 'Ayesha Malik', role: 'Event Coordinator', bio: 'Planning and executing seminars, guest lectures, and flagship cyber events.' },
-  { name: 'Zain Abid', role: 'Media & Outreach Head', bio: 'Managing digital presence, promotional campaigns, and external partnerships.' },
-  { name: 'Rameen Akhtar', role: 'Content & Communications', bio: 'Creating technical content, newsletters, and managing internal communications.' },
   { name: 'Hamza Tariq', role: 'Finance & Logistics', bio: 'Handling budgeting, sponsorships, and operational logistics for all society events.' },
+  { name: 'Haleema Ahsan', role: 'Community Outreach Head', bio: 'Building community partnerships and driving outreach programs.' },
+  { name: 'Zoya Rabail', role: 'Management Head', bio: 'Streamlining internal operations and team management workflows.' },
+  { name: 'Zumar Sayyam', role: 'PR Head', bio: 'Managing public relations, media engagement, and society branding.' },
+  { name: 'Dur e Mknoon, Haider Arshad', role: 'Media Lead', bio: 'Producing multimedia content and managing social media channels.' },
+  { name: 'Xainab Safwan', role: 'Sponsorship', bio: 'Securing sponsorships and fostering industry partnerships.' },
+  { name: 'Ureeda Munawar', role: 'Documentation', bio: 'Maintaining technical documentation and knowledge base records.' },
+  { name: 'Zainab Haider', role: 'Hosting Lead', bio: 'Managing event hosting, session coordination, and speaker arrangements.' },
+  { name: 'Abdullah Khalid', role: 'Documentation', bio: 'Recording meeting minutes and archiving society resources.' },
+  { name: 'Ahmad Raza', role: 'Management Lead', bio: 'Coordinating management tasks and operational workflows.' },
+  { name: 'Muhammad Ahmad Bajwa', role: 'PR Lead', bio: 'Leading promotional campaigns and enhancing society visibility.' },
+  { name: 'Hamza Shahid', role: 'Marketing', bio: 'Driving marketing strategies and audience engagement initiatives.' },
 ]
 
 function useReveal() {
@@ -116,34 +129,31 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div data-reveal className="mb-20">
-            <h3 className="text-center text-2xl font-space font-bold text-white mb-12">
-              Our <span className="text-cyan-400">Journey</span>
+          <div data-reveal className="mb-16">
+            <h3 className="text-center text-2xl font-space font-bold text-white mb-3">
+              Board of <span className="text-cyan-400">Governors</span>
             </h3>
-            <div className="max-w-3xl mx-auto">
-              {timeline.map((e) => (
-                <div key={e.year} className="relative flex items-start gap-5 pb-8 pl-8 border-l-2 border-[#1e2d45] last:pb-0">
-                  <div className="absolute left-[-9px] w-4 h-4 rounded-full bg-cyan-500 border-4 border-[#0b0f19]"></div>
-                  <div className="pt-0.5">
-                    <span className="text-cyan-400 font-bold font-space text-lg">{e.year}</span>
-                    <h4 className="text-white font-semibold mt-0.5">{e.title}</h4>
-                    <p className="text-gray-400 text-sm mt-1">{e.desc}</p>
-                  </div>
-                </div>
-              ))}
+            <p className="text-center text-gray-500 text-sm mb-10 max-w-lg mx-auto">
+              Our esteemed advisory board guiding the society.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse max-w-lg mx-auto">
+                <thead>
+                  <tr className="border-b-2 border-[#1e2d45]">
+                    <th className="py-3 px-4 text-cyan-400 font-space font-bold text-sm uppercase tracking-wider">Year</th>
+                    <th className="py-3 px-4 text-cyan-400 font-space font-bold text-sm uppercase tracking-wider">Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {boardOfGovernors.map((g, i) => (
+                    <tr key={i} className="border-b border-[#1e2d45]/50 hover:bg-[#131a2b] transition-colors">
+                      <td className="py-3 px-4 text-gray-400 font-medium">{g.year}</td>
+                      <td className="py-3 px-4 text-white font-medium">{g.name}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-6 mb-20">
-            {coreValues.map((v, i) => (
-              <div key={v.title} data-reveal className="p-8 bg-[#131a2b] border-2 border-[#1e2d45] rounded text-center hover:border-cyan-500/30 transition-colors" style={{ transitionDelay: `${i * 200}ms` }}>
-                <div className="w-14 h-14 mx-auto mb-4 rounded bg-cyan-500/10 border-2 border-cyan-500/30 flex items-center justify-center">
-                  <i className={`fas ${v.icon} text-xl text-cyan-400`}></i>
-                </div>
-                <h4 className="text-white font-space font-bold text-lg mb-2">{v.title}</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
           </div>
 
           <div data-reveal className="mb-16">
@@ -175,6 +185,7 @@ export default function AboutPage() {
             </p>
             <TeamGrid members={nonTechTeam} />
           </div>
+
         </div>
       </section>
     </div>
